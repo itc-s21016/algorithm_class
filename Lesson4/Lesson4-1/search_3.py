@@ -27,6 +27,8 @@ if i == n:
         print("登録されました")
         print(data)
         #f.close()
+    else:
+        print("またのご利用をお待ちしています")
 else:
     print(data[i][0]+"さんの番号は "+data[i][1]+"です")
     #f.close()
