@@ -57,4 +57,4 @@ while d > 0:
         p = c
         c = p * 2 + 1
     d = d - 1
-print(f"{Color.YELLOW}", data, f"ソート後のデータ{Color.RESET}")
+print(f"{Color.MAGENTA}", data, f"ソート後のデータ{Color.RESET}")
