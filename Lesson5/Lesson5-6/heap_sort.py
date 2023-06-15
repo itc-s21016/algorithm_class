@@ -23,41 +23,41 @@ class Color:
     BG_DEFAULT = '\033[49m'  # 背景色をデフォルトに戻す
     RESET = '\033[0m'  # 全てリセット
 
-a = [1, 3, 4, 7, 8, 9]
-b = [0, 2, 5, 6]
-na = len(a)
-nb = len(b)
-c = [0] * (na + nb)  # 初期化
-i = 0
-j = 0
-p = 0
 
-print(f"{Color.RED}データA", a, f"{Color.RESET}")
-print(f"{Color.BLUE}データB", b, f"{Color.RESET}")
+import random
 
-while i < na and j < nb:
-    if a[i] <= b[j]:
-        c[p] = a[i]
-        i += 1
-        p += 1
-        print(c)
+n = 12
+data = [0] * n
+for i in range(n):
+    data[i] = random.randint(1, 99)
+print(f"{Color.RED}", data, f"元のデータ{Color.RESET}")
 
-    else:
-        c[p] = b[j]
-        j += 1
-        p += 1
-        print(c)
+for i in range((n - 1) // 2, -1, -1):
+    p = i
+    c = p * 2 + 1
+    while c < n:
+        if c < n - 1 and data[c] < data[c + 1]:
+            c += 1
+        if data[p] >= data[c]:
+            break
+        data[p], data[c] = data[c], data[p]
+        p = c
+        c = p * 2 + 1
+print(f"{Color.BLUE}", data, f"初期ヒープ{Color.RESET}")
 
-while i < na:
-    c[p] = a[i]
-    i += 1
-    p += 1
-    print(c)
-
-while j < nb:
-    c[p] = b[j]
-    j += 1
-    p += 1
-    print(c)
-
-print(f"{Color.YELLOW}マージ後のデータ", c, f"{Color.RESET}")
+# 根切りしてヒープを再構成
+d = n - 1
+while d > 0:
+    data[0], data[d] = data[d], data[0]
+    p = 0
+    c = p * 2 + 1
+    while c < d:
+        if c < d - 1 and data[c] < data[c + 1]:
+            c += 1
+        if data[p] >= data[c]:
+            break
+        data[p], data[c] = data[c], data[p]
+        p = c
+        c = p * 2 + 1
+    d = d - 1
+print(f"{Color.MAGENTA}", data, f"ソート後のデータ{Color.RESET}")

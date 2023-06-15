@@ -24,28 +24,28 @@ class Color:
     RESET = '\033[0m'  # 全てリセット
 
 
-"""print(f'黒:{Color.BLACK}●ABC{Color.RESET}')
-print(f'赤:{Color.RED}●ABC{Color.RESET}')
-print(f'緑:{Color.GREEN}●ABC{Color.RESET}')
-print(f'黄:{Color.YELLOW}●ABC{Color.RESET}')
-print(f'青:{Color.BLUE}●ABC{Color.RESET}')
-print(f'マゼンタ:{Color.MAGENTA}●ABC{Color.RESET}')
-print(f'シアン:{Color.CYAN}●ABC{Color.RESET}')
-print(f'白:{Color.WHITE}●ABC{Color.RESET}')
-print(f'下線:{Color.UNDERLINE}●ABC{Color.RESET}')
-print(f'太字:{Color.BOLD}●ABC{Color.RESET}')
-print(f'不可視:{Color.INVISIBLE}●ABC{Color.RESET}')
-print(f'反転:{Color.REVERCE}●ABC{Color.RESET}')
-print(f'背景黒:{Color.BG_BLACK}●ABC{Color.RESET}')
-print(f'背景赤:{Color.BG_RED}●ABC{Color.RESET}')
-print(f'背景緑:{Color.BG_GREEN}●ABC{Color.RESET}')
-print(f'背景黄:{Color.BG_YELLOW}●ABC{Color.RESET}')
-print(f'背景青:{Color.BG_BLUE}●ABC{Color.RESET}')
-print(f'背景マゼンタ:{Color.BG_MAGENTA}●ABC{Color.RESET}')
-print(f'背景シアン:{Color.BG_CYAN}●ABC{Color.RESET}')
-print(f'背景白:{Color.BG_WHITE}●ABC{Color.RESET}')
+"""print(f'黒:{Color.py.BLACK}●ABC{Color.py.RESET}')
+print(f'赤:{Color.py.RED}●ABC{Color.py.RESET}')
+print(f'緑:{Color.py.GREEN}●ABC{Color.py.RESET}')
+print(f'黄:{Color.py.YELLOW}●ABC{Color.py.RESET}')
+print(f'青:{Color.py.BLUE}●ABC{Color.py.RESET}')
+print(f'マゼンタ:{Color.py.MAGENTA}●ABC{Color.py.RESET}')
+print(f'シアン:{Color.py.CYAN}●ABC{Color.py.RESET}')
+print(f'白:{Color.py.WHITE}●ABC{Color.py.RESET}')
+print(f'下線:{Color.py.UNDERLINE}●ABC{Color.py.RESET}')
+print(f'太字:{Color.py.BOLD}●ABC{Color.py.RESET}')
+print(f'不可視:{Color.py.INVISIBLE}●ABC{Color.py.RESET}')
+print(f'反転:{Color.py.REVERCE}●ABC{Color.py.RESET}')
+print(f'背景黒:{Color.py.BG_BLACK}●ABC{Color.py.RESET}')
+print(f'背景赤:{Color.py.BG_RED}●ABC{Color.py.RESET}')
+print(f'背景緑:{Color.py.BG_GREEN}●ABC{Color.py.RESET}')
+print(f'背景黄:{Color.py.BG_YELLOW}●ABC{Color.py.RESET}')
+print(f'背景青:{Color.py.BG_BLUE}●ABC{Color.py.RESET}')
+print(f'背景マゼンタ:{Color.py.BG_MAGENTA}●ABC{Color.py.RESET}')
+print(f'背景シアン:{Color.py.BG_CYAN}●ABC{Color.py.RESET}')
+print(f'背景白:{Color.py.BG_WHITE}●ABC{Color.py.RESET}')
 # 文字色と背景色を変える
-print(f'文字赤+背景緑:{Color.RED}{Color.BG_GREEN}●ABC{Color.RESET}')"""
+print(f'文字赤+背景緑:{Color.py.RED}{Color.py.BG_GREEN}●ABC{Color.py.RESET}')"""
 
 
 data = ["yosiya","ryuki","seiga","yuu","syunta","asahi","kouiti","seika","kyousuke","haruya","tokiya"]

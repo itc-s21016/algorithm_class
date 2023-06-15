@@ -43,7 +43,7 @@ for i in range((n - 1) // 2, -1, -1):
 print(f"{Color.BLUE}", data, f"初期ヒープ{Color.RESET}")
 
 # 根切りしてヒープを再構成
-d = n - 1
+"""d = n - 1
 while d > 0:
     data[0], data[d] = data[d], data[0]
     p = 0
@@ -58,3 +58,4 @@ while d > 0:
         c = p * 2 + 1
     d = d - 1
 print(f"{Color.MAGENTA}", data, f"ソート後のデータ{Color.RESET}")
+"""
