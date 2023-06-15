@@ -24,41 +24,50 @@ class Color:
     RESET = '\033[0m'  # 全てリセット
 
 
-a = [1, 3, 4, 7, 8, 9]
-b = [0, 2, 5, 6]
-na = len(a)
-nb = len(b)
-c = [0] * (na + nb)  # 初期化
-i = 0
-j = 0
-p = 0
+import random
 
-print(f"{Color.RED}データA", a, f"{Color.RESET}")
-print(f"{Color.BLUE}データB", b, f"{Color.RESET}")
+n = 15
+data = [0] * n
+for i in range(n):
+    data[i] = random.randint(1, 99)
 
-while i < na and j < nb:
-    if a[i] <= b[j]:
-        c[p] = a[i]
+
+def merge(left, mid, right):
+    buff = [0] * (right - left)
+    i = left
+    j = mid
+    p = 0
+    while i < mid and j < right:
+        if data[i] <= data[j]:
+            buff[p] = data[i]
+            i += 1
+            p += 1
+        else:
+            buff[p] = data[j]
+            j += 1
+            p += 1
+    while i < mid:
+        buff[p] = data[i]
         i += 1
         p += 1
-        print(c)
 
-    else:
-        c[p] = b[j]
+    while j < right:
+        buff[p] = data[j]
         j += 1
         p += 1
-        print(c)
+        for n in range(left, right):
+            data[n] = buff[n - left]
 
-while i < na:
-    c[p] = a[i]
-    i += 1
-    p += 1
-    print(c)
 
-while j < nb:
-    c[p] = b[j]
-    j += 1
-    p += 1
-    print(c)
-
-print(f"{Color.YELLOW}マージ後のデータ", c, f"{Color.RESET}")
+print(data, "元のデータ")
+s = 2
+while s <= n:
+    loop = n // s
+    fragment = n % s
+    for i in range(loop):
+        merge(i * s, i * s + (s // 2), i * s + s)
+    if fragment > 0:
+        merge((loop - 1) * s, loop * s, n)
+    s = s * 2
+print(data, "ソート後のデータ")
+       
