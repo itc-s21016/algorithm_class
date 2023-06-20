@@ -28,4 +28,9 @@ def euclid2(ab, c):
         return euclid2(c, ab % c)
 
 
+def lcm(a, b, c):
+    return a * b * c / euclid2(ab, c)
+
+
 print("それらの数の最大公約数は", euclid2(ab, c))
+print("それらの自然数の最小公倍数は", lcm(a, b, c))
