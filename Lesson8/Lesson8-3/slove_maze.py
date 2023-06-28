@@ -1,19 +1,24 @@
 import tkinter
 
 maze = [
-    [99, 99, 99, 99, 99, 99, 99, 99, 99],
-    [99, 0, 0, 0, 0, 0, 0, 99, 99],
-    [99, 0, 99, 99, 0, 99, 99, 0, 99],
-    [99, 0, 99, 0, 99, 0, 0, 0, 99],
-    [99, 0, 0, 0, 99, 0, 99, 0, 99],
-    [99, 0, 99, 0, 0, 0, 99, 0, 99],
-    [99, 99, 99, 99, 99, 99, 99, 99, 99]
+    [99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99],
+    [99, 99, 99, 0, 99, 99, 99, 99, 0, 0, 0, 99],
+    [99, 0, 99, 0, 99, 0, 0, 99, 0, 99, 99, 99],
+    [99, 0, 99, 0, 99, 99, 0, 99, 0, 99, 0, 99],
+    [99, 0, 99, 0, 99, 0, 0, 99, 0, 0, 0, 99],
+    [99, 0, 99, 0, 99, 0, 99, 0, 0, 99, 0, 99],
+    [99, 0, 99, 0, 99, 0, 99, 0, 99, 0, 0, 99],
+    [99, 0, 0, 0, 0, 0, 99, 0, 99, 0, 99, 99],
+    [99, 99, 0, 99, 0, 99, 0, 0, 99, 0, 99, 99],
+    [99, 99, 0, 99, 0, 99, 0, 99, 0, 0, 0, 99],
+    [99, 0, 0, 99, 0, 0, 0, 99, 0, 99, 0, 99],
+    [99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99],
 ]
 FNT = ("Times New Roman", 16)
 start_x = 1
-start_y = 1
-goal_x = 7
-goal_y = 5
+start_y = 10
+goal_x = 10
+goal_y = 10
 goal = False
 steps = 0
 
@@ -21,8 +26,8 @@ steps = 0
 def walk():
     global goal, steps
     steps += 1
-    for y in range(1, 6):
-        for x in range(1, 8):
+    for y in range(1, 11):
+        for x in range(1, 11):
             if maze[y][x] == steps:
                 if maze[y - 1][x] == 0:
                     maze[y - 1][x] = steps + 1
@@ -57,8 +62,8 @@ def shortest_way():
 
 def draw_maze():
     cvs.delete("all")
-    for y in range(7):
-        for x in range(9):
+    for y in range(12):
+        for x in range(12):
             col = "white"
             if maze[y][x] == 99:
                 col = "gray"
@@ -83,7 +88,7 @@ def main():
 
 root = tkinter.Tk()
 root.title("迷路を解く")
-cvs = tkinter.Canvas(width=540, height=420)
+cvs = tkinter.Canvas(width=1000, height=1000)
 cvs.pack()
 maze[start_y][start_x] = 1
 main()
